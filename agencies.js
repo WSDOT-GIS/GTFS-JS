@@ -26,7 +26,7 @@
 		module.exports = factory();
 	} else {
 		// Browser globals (root is window)
-		root.returnExports = factory();
+		root.gtfs_agencies = factory();
 	}
 }(this, function () {
 

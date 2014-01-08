@@ -39,12 +39,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="agencies.js" />
+    <Content Include="default.htm" />
+    <Content Include="default.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="agencies.json" />
+    <Content Include="agencies.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
