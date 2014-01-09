@@ -38,9 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="agencies.js" />
     <Content Include="default.htm" />
     <Content Include="default.js" />
+    <Content Include="gtfs-exchange.js" />
+    <Content Include="intercity-transit.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

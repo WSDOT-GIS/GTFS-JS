@@ -1,0 +1,280 @@
+﻿{
+	"status_code": 200,
+	"data": {
+		"agency": {
+			"date_last_updated": 1389074131.0,
+			"feed_baseurl": "http://www.intercitytransit.com/googledata/google_transit.zip",
+			"name": "Intercity Transit",
+			"area": "Olympia",
+			"url": "http://www.Intercitytransit.com",
+			"country": "United States",
+			"state": "Washington",
+			"license_url": "",
+			"dataexchange_url": "http://www.gtfs-data-exchange.com/agency/intercity-transit/",
+			"date_added": 1319081005.0,
+			"is_official": true,
+			"dataexchange_id": "intercity-transit"
+		},
+		"datafiles": [{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "f88e5e6aef8b78ad95c9527649d6a752",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20140107_0555.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20140107_0555.zip",
+			"date_added": 1389074131.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 984145
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "194c0331b0c3044a25b386e50ab15fb6",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20131119_1920.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20131119_1920.zip",
+			"date_added": 1384888851.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 979581
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "efb3c9994ccc59020b93dad23809d01b",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130912_0113.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130912_0113.zip",
+			"date_added": 1378948399.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 961303
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "24ba2ff752ff94d2174ab7dba729bc07",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130607_0325.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130607_0325.zip",
+			"date_added": 1370575534.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 960024
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "61937e9af5a5cdf35ef67270f275cb08",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130430_0327.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130430_0327.zip",
+			"date_added": 1367292429.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 960161
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "254aad291692125e4e0e044d9a76d404",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130426_0332.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130426_0332.zip",
+			"date_added": 1366947154.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 609601
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "b9a2eccd4a6eec8eaa64121489c6ba65",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130216_0409.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130216_0409.zip",
+			"date_added": 1360987787.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 964105
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "58f3c18e320eb767aaa73a2365561e28",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130131_0430.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130131_0430.zip",
+			"date_added": 1359606619.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 957145
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "af7aed04b1e11cfcc4ed644b6c7a67db",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20130123_0434.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20130123_0434.zip",
+			"date_added": 1358915679.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 957138
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "7ac9e62f1181413fea8ed97e4b37c1a5",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20121228_1317.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20121228_1317.zip",
+			"date_added": 1356700668.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 957136
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "75a6803b3226bdef6f87d6f7e62485e3",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20121116_0416.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20121116_0416.zip",
+			"date_added": 1353039387.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 942534
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "e61ea9e61f040672d49796836a3c189d",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20121106_0405.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20121106_0405.zip",
+			"date_added": 1352174711.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 940948
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "e88670206e208e3076bf8048abd3c9e6",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20121101_0357.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20121101_0357.zip",
+			"date_added": 1351742232.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 940949
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "45d8ef89c98c295c1a3b74e4bbd84b89",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120926_0319.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120926_0319.zip",
+			"date_added": 1348629549.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 627103
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "9517d5dae36d442cdfa6b9ccde0a3488",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120626_0305.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120626_0305.zip",
+			"date_added": 1340679922.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1231432
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "3547241be0525c33886e1572976c5041",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120610_0310.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120610_0310.zip",
+			"date_added": 1339297819.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1229215
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "5ff6977dd6e05ed527cbea0063e06202",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120324_0310.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120324_0310.zip",
+			"date_added": 1332558600.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1230644
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "8fc58496ac2bc72011c2268516da8721",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120319_0549.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120319_0549.zip",
+			"date_added": 1332136176.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1227685
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "8d854e2168fe466c41f55a7acfaf84be",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120319_0338.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120319_0338.zip",
+			"date_added": 1332128320.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1244760
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "a48921346e74869f6728e81983a8ef51",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120202_0423.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120202_0423.zip",
+			"date_added": 1328156581.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1268227
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "b16bddacf8d565124a41674e0d7ca9da",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120105_1219.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120105_1219.zip",
+			"date_added": 1325765941.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1244761
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "237567036349205274252ee278a94ec8",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120105_1040.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120105_1040.zip",
+			"date_added": 1325760035.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1257256
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "72c09274b5621b71feaf0b43c2406cca",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120105_0836.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120105_0836.zip",
+			"date_added": 1325752562.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1257254
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "116936bb5899b9281a1f7d417c21192f",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120105_0635.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120105_0635.zip",
+			"date_added": 1325745352.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1173506
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "5fa72c308c7de9512a4be4c4d44c59c6",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20120105_0521.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20120105_0521.zip",
+			"date_added": 1325740873.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1243420
+		},
+		{
+			"description": "Archived from http://www.intercitytransit.com/googledata/google_transit.zip",
+			"md5sum": "77b45e1f6a0348e80e30f194a82b0070",
+			"file_url": "http://gtfs.s3.amazonaws.com/intercity-transit_20111020_0323.zip",
+			"agencies": ["intercity-transit"],
+			"filename": "intercity-transit_20111020_0323.zip",
+			"date_added": 1319081005.0,
+			"uploaded_by_user": "intercity-transit-olympia-archiver",
+			"size": 1228064
+		}]
+	},
+	"status_txt": "OK"
+}
