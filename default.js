@@ -8,27 +8,38 @@ require(["gtfs-exchange"], function (Agencies) {
 	}
 
 	function createAgencyTable(/**Object[]*/ agencies) {
-		var table, propNames, i, l, row, cell;
+		var table, propNames, insertCell, row;
+
+
+
 		if (agencies && agencies.length) {
 			table = document.createElement("table");
 			table.createTBody();
 			// Get agency property names.
 			propNames = Object.getOwnPropertyNames(agencies[0]);
 
-			for (i = 0, l = agencies.length; i < l; i++) {
-				row = table.insertRow(i);
-				for (var j = 0, jl = propNames.length; j < jl; j += 1) {
-					cell = row.insertCell(j);
-					cell.textContent = String(agencies[i][propNames[j]]);
-				}
-			}
+			/** Inserts a cell into a row.
+			 * @this {Object} Properties are row and agency.
+			*/
+			insertCell = function (propName, j) {
+				var cell = this.row.insertCell(j);
+				cell.textContent = String(this.agency[propName]);
+			};
 
+			// Add rows for each agency.
+			agencies.forEach(function (agency, i) {
+				var row = table.insertRow(i);
+				propNames.forEach(insertCell, { row: row, agency: agency });
+			});
+
+			// Add the header
 			table.createTHead();
 			row = table.insertRow(0);
-			for (i = 0, l = propNames.length; i < l; i += 1) {
-				cell = row.insertCell(i);
-				cell.textContent = propNames[i];
-			}
+
+			propNames.forEach(function (propName, i) {
+				var cell = row.insertCell(i);
+				cell.textContent = propName;
+			});
 		}
 
 		return table;
