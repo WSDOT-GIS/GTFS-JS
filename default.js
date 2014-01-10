@@ -1,5 +1,5 @@
 ﻿/*global require*/
-require(["gtfs-exchange.min"], function (Agencies) {
+require(["gtfs-exchange.min"], function (Gtfs) {
 	"use strict";
 	var agencyListUrl = "proxy.ashx?http://www.gtfs-data-exchange.com/api/agencies";
 
@@ -95,7 +95,7 @@ require(["gtfs-exchange.min"], function (Agencies) {
 	}
 
 	function handleAgencyList(/**{string}*/ json) {
-		var agencies, agencyResponse = Agencies.parseAgencyResponse(json);
+		var agencies, agencyResponse = Gtfs.parseAgencyResponse(json);
 
 
 		/** Use with Array.filter() filter out non-WA agencies.
