@@ -80,6 +80,22 @@
 		this.latestFeedUrl = this.dataexchange_url ? this.dataexchange_url.replace(/\/$/, "") + "/latest.zip" : null;
 	}
 
+	/** Group an array of agencies by area.
+	 * @returns {Object.<string, Agency[]>}
+	 */
+	Agency.groupByArea = function (/**{Agency[]}*/ agencies) {
+		var grouped = {};
+		agencies.forEach(function (agency) {
+			if (!grouped.hasOwnProperty(agency.area)) {
+				grouped[agency.area] = [agency];
+			} else {
+				grouped[agency.area].push(agency);
+			}
+
+		});
+		return grouped;
+	};
+
 
 
 	/** For use with JSON.parse(). Dates numbers will be converted to Date objects.
