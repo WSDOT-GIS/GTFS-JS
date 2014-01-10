@@ -22,31 +22,65 @@
 		return new Date(n * 1000);
 	}
 
-	function Agency(data) {
-		this.dataexchange_id = data.dataexchange_id; // "abq-ride"
-		this.feed_baseurl = data.feed_baseurl; // "http://data.cabq.gov/transit/gtfs/google_transit.zip",
-		this.name = data.name; // "ABQ Ride",
-		this.area = data.area; // "Albuquerque",
-		this.url = data.url; // "http://myabqride.com",
-		this.country = data.country; // "United States",
-		this.state = data.state; // "New Mexico",
-		this.license_url = data.license_url; // "",
-		this.dataexchange_url = data.dataexchange_url; // "http://www.gtfs-data-exchange.com/agency/abq-ride/",
-		this.date_added = convertDateToDateObject(data.date_added); // 1340739867.0,
-		this.date_last_updated = convertDateToDateObject(data.date_last_updated); // 1346727786.0,
-		this.is_official = data.is_official; // true,
-	}
-
+	/** Represents an element of the datafile array returned from the API endpoint http://www.gtfs-data-exchange.com/api/agency?agency={dataexchange_id}.
+	 * @param {Object} data
+	*/
 	function Datafile(data) {
+		/** @member {string} */
 		this.description = data.description; // "Archived from http://data.cabq.gov/transit/gtfs/google_transit.zip",
+		/** @member {string} */
 		this.md5sum = data.md5sum; // "f96e9fa37f13789e3d98f09b599e9c4a",
+		/** @member {string} */
 		this.file_url = data.file_url; // "http://gtfs.s3.amazonaws.com/abq-ride_20120904_0303.zip",
+		/** @member {string} */
 		this.agencies = data.agencies; // ["abq-ride"],
+		/** @member {string} */
 		this.filename = data.filename; // "abq-ride_20120904_0303.zip",
+		/** @member {Date} */
 		this.date_added = convertDateToDateObject(data.date_added); // 1346727786.0,
+		/** @member {string} */
 		this.uploaded_by_user = data.uploaded_by_user; // "abq-ride-archiver",
+		/** @member {number} */
 		this.size = data.size; // 3094785
 	}
+
+	/** An object representing an agency that publishes GTFS data to GTFS-Exchange.
+	 * @param {Object} data
+	 * @param {?Object.<string, object>} datafiles
+	 */
+	function Agency(data, datafiles) {
+		/** @member {string} */
+		this.dataexchange_id = data.dataexchange_id; // "abq-ride"
+		/** @member {string} */
+		this.feed_baseurl = data.feed_baseurl; // "http://data.cabq.gov/transit/gtfs/google_transit.zip",
+		/** @member {string} */
+		this.name = data.name; // "ABQ Ride",
+		/** @member {string} */
+		this.area = data.area; // "Albuquerque",
+		/** @member {string} */
+		this.url = data.url; // "http://myabqride.com",
+		/** @member {string} */
+		this.country = data.country; // "United States",
+		/** @member {string} */
+		this.state = data.state; // "New Mexico",
+		/** @member {string} */
+		this.license_url = data.license_url; // "",
+		/** @member {string} */
+		this.dataexchange_url = data.dataexchange_url; // "http://www.gtfs-data-exchange.com/agency/abq-ride/",
+		/** @member {Date} */
+		this.date_added = convertDateToDateObject(data.date_added); // 1340739867.0,
+		/** @member {Date} */
+		this.date_last_updated = convertDateToDateObject(data.date_last_updated); // 1346727786.0,
+		/** @member {boolean} */
+		this.is_official = data.is_official; // true,
+		/** @member {DataFile[]} */
+		this.datafiles = datafiles || null;
+
+		/** @member {string} latestFeedUrl - URL for the most current GTFS ZIP file */
+		this.latestFeedUrl = this.dataexchange_url ? this.dataexchange_url.replace(/\/$/, "") + "/latest.zip" : null;
+	}
+
+
 
 	/** For use with JSON.parse(). Dates numbers will be converted to Date objects.
 	 * @param {string} k - The property name.
@@ -55,9 +89,13 @@
 	 */
 	function agencyReviver(k, v) {
 		var output = v;
-		if (v.hasOwnProperty("is_official")) {
-			output = Agency(v);
+		/*jshint eqnull:true*/
+		// Detect an Agency.
+		if (v.is_official != null) {
+			output = new Agency(v);
 		}
+		/*jshint eqnull:false*/
+
 		return output;
 	}
 
@@ -72,6 +110,7 @@
 	// can return a function as the exported value.
 	return {
 		Agency: Agency,
+		Datafile: Datafile,
 		parseAgencyResponse: parseAgencyResponse
 	};
 }));
