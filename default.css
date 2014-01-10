@@ -1,0 +1,35 @@
+﻿body {
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, tbody th {
+	border: 1px solid black;
+}
+
+td, th {
+	padding: .3em;
+}
+
+tbody th {
+	text-align: center;
+}
+
+td:nth-child(2) {
+	font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+}
+
+tbody td {
+	text-align: center;
+}
+
+tr > td:first-child {
+	text-align: start;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #eae3e3;
+}

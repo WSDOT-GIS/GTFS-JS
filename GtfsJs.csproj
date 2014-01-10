@@ -38,8 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="default.css" />
     <Content Include="default.htm" />
     <Content Include="default.js" />
+    <Content Include="default.min.css">
+      <DependentUpon>default.css</DependentUpon>
+    </Content>
     <Content Include="gtfs-exchange.js" />
     <Content Include="intercity-transit.txt" />
     <Content Include="proxy.ashx" />

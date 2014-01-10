@@ -8,21 +8,21 @@ require(["gtfs-exchange"], function (Agencies) {
 	}
 
 	function createAgencyTable(/**Object[]*/ agencies) {
-		var table, insertCell, row, propNames, thead;
+		var table, insertCell, row, propNames, thead, previousArea;
 
 		propNames = [
 			"name",
-			"area",
+			//"area",
 			//"country",
 			//"state",
+			"dataexchange_id",
 			"url",
 			"dataexchange_url",
 			"feed_baseurl",
 			"license_url",
 			"date_added",
 			"date_last_updated",
-			"is_official",
-			"dataexchange_id"
+			"is_official"
 		];
 
 
@@ -61,8 +61,20 @@ require(["gtfs-exchange"], function (Agencies) {
 			};
 
 			// Add rows for each agency.
-			agencies.forEach(function (agency, i) {
-				var row = table.insertRow(i);
+			agencies.forEach(function (agency) {
+				var row, cell;
+				// Add an area header if this is a new area.
+				if (agency.area !== previousArea) {
+					previousArea = agency.area;
+					if (agency.area) {
+						row = table.insertRow(-1);
+						cell = document.createElement("th");
+						cell.textContent = agency.area;
+						cell.setAttribute("colspan", 9);
+						row.appendChild(cell);
+					}
+				}
+				row = table.insertRow(-1);
 				if (!agency.is_official) {
 					row.classList.add("unofficial");
 				}
@@ -94,6 +106,10 @@ require(["gtfs-exchange"], function (Agencies) {
 		if (agencyResponse.data) {
 			agencies = agencyResponse.data;
 			agencies = agencies.filter(isInWA);
+			// Sort by area
+			agencies.sort(function (a, b) {
+				return a.area > b.area ? 1 : a.area < b.area ? -1 : 0;
+			});
 			document.body.appendChild(createAgencyTable(agencies));
 		}
 	}
