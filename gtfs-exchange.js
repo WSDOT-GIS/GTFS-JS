@@ -101,7 +101,7 @@
 	/** For use with JSON.parse(). Dates numbers will be converted to Date objects.
 	 * @param {string} k - The property name.
 	 * @param {?(number|string|boolean|Array|Object)} v - The value of the property.
-	 * @returns {?(number|string|boolean|Array|Object|Date)}
+	 * @returns {?(number|string|boolean|Array|Object|Date|Agency|Datafile)}
 	 */
 	function agencyReviver(k, v) {
 		var output = v;
@@ -109,6 +109,8 @@
 		// Detect an Agency.
 		if (v.is_official != null) {
 			output = new Agency(v);
+		} else if (v.md5sum) { // Detect a DataFile
+			output = new Datafile(v);
 		}
 		/*jshint eqnull:false*/
 

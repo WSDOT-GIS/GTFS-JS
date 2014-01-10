@@ -106,7 +106,17 @@ require(["gtfs-exchange"], function (Agencies) {
 			agencies = agencies.filter(isInWA);
 			// Sort by area
 			agencies.sort(function (a, b) {
-				return a.area > b.area ? 1 : a.area < b.area ? -1 : 0;
+				if (a.area > b.area) {
+					return 1;
+				} else if (a.area < b.area) {
+					return -1;
+				} else if (a.name > b.name) {
+					return 1;
+				} else if (a.name < b.name) {
+					return -1;
+				} else {
+					return 0;
+				}
 			});
 			document.body.appendChild(createAgencyTable(agencies));
 		}
@@ -116,6 +126,8 @@ require(["gtfs-exchange"], function (Agencies) {
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", agencyListUrl, true);
 		xhr.onload = function () {
+			var progress = document.getElementById("agenciesTableProgress");
+			progress.parentElement.removeChild(progress);
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
 					handleAgencyList(xhr.responseText);

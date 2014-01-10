@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -31,14 +32,36 @@ namespace GtfsJs
 				else
 				{
 					var req = (HttpWebRequest)HttpWebRequest.Create(uri);
-					using (var resp = (HttpWebResponse)req.GetResponse())
+
+					CopyHeaders(context.Request, req);
+
+					HttpWebResponse resp;
+
+					try
 					{
-						context.Response.StatusCode = (int)resp.StatusCode;
-						context.Response.ContentType = resp.ContentType;
-						using (var stream = resp.GetResponseStream())
-						{
-							stream.CopyTo(context.Response.OutputStream);
-						}
+						resp = (HttpWebResponse)req.GetResponse();
+						context.Response.Cache.SetMaxAge(TimeSpan.Zero);
+					}
+					catch (WebException ex)
+					{
+						// Some status codes (e.g., 304/Redirect) cause an exception.
+						// Set the response to the exception's response object.
+						resp = (HttpWebResponse)ex.Response;
+					}
+
+					context.Response.ContentType = resp.ContentType;
+					context.Response.StatusCode = (int)resp.StatusCode;
+
+					if (resp.Headers["Etag"] != null)
+					{
+						context.Response.AppendHeader("Etag", resp.Headers["Etag"]);
+					}
+
+
+
+					using (var stream = resp.GetResponseStream())
+					{
+						stream.CopyTo(context.Response.OutputStream);
 					}
 				}
 			}
@@ -47,6 +70,31 @@ namespace GtfsJs
 				context.Response.StatusCode = 400;
 				context.Response.ContentType = "text/plain";
 				context.Response.Write("No URI was specified for the proxy.");
+			}
+		}
+
+		/// <summary>
+		/// Copies the headers from an <see cref="HttpRequest"/> to a <see cref="WebRequest"/>.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <param name="destination"></param>
+		/// <param name="ignorePattern">
+		/// <see cref="Regex"/> pattern that specifies which headers to NOT copy over.
+		/// </param>
+		private static void CopyHeaders(HttpRequest source, HttpWebRequest destination, string ignorePattern = @"(?in)^(User-Agent)$")
+		{
+			Regex specialRegex = new Regex(@"(?in)^(Accept)|(Host)|(Connection)|(Referer)$");
+			Regex ignoreRegex = string.IsNullOrWhiteSpace(ignorePattern) ? null : new Regex(ignorePattern);
+			destination.Accept = string.Join(",", source.AcceptTypes);
+			foreach (string key in source.Headers.Keys)
+			{
+				if (specialRegex.IsMatch(key) || (ignoreRegex != null && ignoreRegex.IsMatch(key)))
+				{
+					continue;
+				}
+
+				destination.Headers.Add(key, source.Headers[key]);
+
 			}
 		}
 
