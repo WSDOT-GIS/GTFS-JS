@@ -16,6 +16,7 @@ td, th {
 
 tbody th {
 	text-align: center;
+	background-color: #eae3e3;
 }
 
 td:nth-child(2) {
@@ -26,10 +27,6 @@ tbody td {
 	text-align: center;
 }
 
-tr > td:first-child {
+tr > td:first-child, td:nth-child(2) {
 	text-align: start;
-}
-
-tbody tr:nth-child(odd) {
-	background-color: #eae3e3;
 }

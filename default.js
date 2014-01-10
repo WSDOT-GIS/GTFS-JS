@@ -66,13 +66,11 @@ require(["gtfs-exchange"], function (Agencies) {
 				// Add an area header if this is a new area.
 				if (agency.area !== previousArea) {
 					previousArea = agency.area;
-					if (agency.area) {
-						row = table.insertRow(-1);
-						cell = document.createElement("th");
-						cell.textContent = agency.area;
-						cell.setAttribute("colspan", 9);
-						row.appendChild(cell);
-					}
+					row = table.insertRow(-1);
+					cell = document.createElement("th");
+					cell.textContent = agency.area || "Unspecified Area";
+					cell.setAttribute("colspan", 9);
+					row.appendChild(cell);
 				}
 				row = table.insertRow(-1);
 				if (!agency.is_official) {
