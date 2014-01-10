@@ -44,7 +44,13 @@
     <Content Include="default.min.css">
       <DependentUpon>default.css</DependentUpon>
     </Content>
+    <Content Include="default.min.js">
+      <DependentUpon>default.js</DependentUpon>
+    </Content>
     <Content Include="gtfs-exchange.js" />
+    <Content Include="gtfs-exchange.min.js">
+      <DependentUpon>gtfs-exchange.js</DependentUpon>
+    </Content>
     <Content Include="intercity-transit.txt" />
     <Content Include="proxy.ashx" />
   </ItemGroup>
@@ -69,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
+    <Content Include="gtfs-exchange.min.js.map">
+      <DependentUpon>gtfs-exchange.js</DependentUpon>
+    </Content>
+    <Content Include="default.min.js.map">
+      <DependentUpon>default.js</DependentUpon>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

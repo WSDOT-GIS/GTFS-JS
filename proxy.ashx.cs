@@ -17,11 +17,20 @@ namespace GtfsJs
 
 		public void ProcessRequest(HttpContext context)
 		{
-			if (string.Compare(context.Request.UrlReferrer.Host, context.Request.Url.Host, true) != 0)
+			if (context.Request.UrlReferrer == null)
+			{
+				context.Response.ContentType = "text/plain";
+				context.Response.StatusCode = 403;
+				context.Response.Write("No Referrer is present.");
+				return;
+
+			}
+			else if (string.Compare(context.Request.UrlReferrer.Host, context.Request.Url.Host, true) != 0)
 			{
 				context.Response.ContentType = "text/plain";
 				context.Response.StatusCode = 403;
 				context.Response.Write("The specified host is not permitted by this proxy.");
+				return;
 			}
 
 			// Get the URL from the query string.
@@ -35,41 +44,40 @@ namespace GtfsJs
 					context.Response.ContentType = "text/plain";
 					context.Response.StatusCode = 403;
 					context.Response.Write("The specified host is not permitted by this proxy.");
+					return;
 				}
-				else
+
+				var req = (HttpWebRequest)HttpWebRequest.Create(uri);
+
+				CopyHeaders(context.Request, req);
+
+				HttpWebResponse resp;
+
+				try
 				{
-					var req = (HttpWebRequest)HttpWebRequest.Create(uri);
+					resp = (HttpWebResponse)req.GetResponse();
+					context.Response.Cache.SetMaxAge(TimeSpan.Zero);
+				}
+				catch (WebException ex)
+				{
+					// Some status codes (e.g., 304/Redirect) cause an exception.
+					// Set the response to the exception's response object.
+					resp = (HttpWebResponse)ex.Response;
+				}
 
-					CopyHeaders(context.Request, req);
+				context.Response.ContentType = resp.ContentType;
+				context.Response.StatusCode = (int)resp.StatusCode;
 
-					HttpWebResponse resp;
-
-					try
-					{
-						resp = (HttpWebResponse)req.GetResponse();
-						context.Response.Cache.SetMaxAge(TimeSpan.Zero);
-					}
-					catch (WebException ex)
-					{
-						// Some status codes (e.g., 304/Redirect) cause an exception.
-						// Set the response to the exception's response object.
-						resp = (HttpWebResponse)ex.Response;
-					}
-
-					context.Response.ContentType = resp.ContentType;
-					context.Response.StatusCode = (int)resp.StatusCode;
-
-					if (resp.Headers["Etag"] != null)
-					{
-						context.Response.AppendHeader("Etag", resp.Headers["Etag"]);
-					}
+				if (resp.Headers["Etag"] != null)
+				{
+					context.Response.AppendHeader("Etag", resp.Headers["Etag"]);
+				}
 
 
 
-					using (var stream = resp.GetResponseStream())
-					{
-						stream.CopyTo(context.Response.OutputStream);
-					}
+				using (var stream = resp.GetResponseStream())
+				{
+					stream.CopyTo(context.Response.OutputStream);
 				}
 			}
 			else
@@ -77,6 +85,7 @@ namespace GtfsJs
 				context.Response.StatusCode = 400;
 				context.Response.ContentType = "text/plain";
 				context.Response.Write("No URI was specified for the proxy.");
+				return;
 			}
 		}
 
