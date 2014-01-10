@@ -17,6 +17,13 @@ namespace GtfsJs
 
 		public void ProcessRequest(HttpContext context)
 		{
+			if (string.Compare(context.Request.UrlReferrer.Host, context.Request.Url.Host, true) != 0)
+			{
+				context.Response.ContentType = "text/plain";
+				context.Response.StatusCode = 403;
+				context.Response.Write("The specified host is not permitted by this proxy.");
+			}
+
 			// Get the URL from the query string.
 			var url = context.Request.Url.Query.TrimStart('?');
 			if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
@@ -83,7 +90,7 @@ namespace GtfsJs
 		/// </param>
 		private static void CopyHeaders(HttpRequest source, HttpWebRequest destination, string ignorePattern = @"(?in)^(User-Agent)$")
 		{
-			Regex specialRegex = new Regex(@"(?in)^(Accept)|(Host)|(Connection)|(Referer)$");
+			Regex specialRegex = new Regex(@"(?in)^((Accept)|(Host)|(Connection)|(Referer))$");
 			Regex ignoreRegex = string.IsNullOrWhiteSpace(ignorePattern) ? null : new Regex(ignorePattern);
 			destination.Accept = string.Join(",", source.AcceptTypes);
 			foreach (string key in source.Headers.Keys)
