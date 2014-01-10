@@ -37,7 +37,16 @@
 		this.is_official = data.is_official; // true,
 	}
 
-
+	function Datafile(data) {
+		this.description = data.description; // "Archived from http://data.cabq.gov/transit/gtfs/google_transit.zip",
+		this.md5sum = data.md5sum; // "f96e9fa37f13789e3d98f09b599e9c4a",
+		this.file_url = data.file_url; // "http://gtfs.s3.amazonaws.com/abq-ride_20120904_0303.zip",
+		this.agencies = data.agencies; // ["abq-ride"],
+		this.filename = data.filename; // "abq-ride_20120904_0303.zip",
+		this.date_added = convertDateToDateObject(data.date_added); // 1346727786.0,
+		this.uploaded_by_user = data.uploaded_by_user; // "abq-ride-archiver",
+		this.size = data.size; // 3094785
+	}
 
 	/** For use with JSON.parse(). Dates numbers will be converted to Date objects.
 	 * @param {string} k - The property name.
