@@ -22,13 +22,34 @@ require(["gtfs-exchange"], function (Agencies) {
 			 * @this {Object} Properties are row and agency.
 			*/
 			insertCell = function (propName, j) {
+				var urlRe = /url$/, dateRe = /date/, a, cb;
 				var cell = this.row.insertCell(j);
-				cell.textContent = String(this.agency[propName]);
+				var value = this.agency[propName];
+				if (urlRe.test(propName) && value) {
+					a = document.createElement("a");
+					a.textContent = "link";
+					a.href = value;
+					cell.appendChild(a);
+				} else if(dateRe.test(propName)) {
+					cell.textContent = value.toLocaleString();
+				} else if (typeof value === "boolean") {
+					cb = document.createElement("input");
+					cb.type = "checkbox";
+					cb.checked = value;
+					cb.readOnly = true;
+					cb.disabled = true;
+					cell.appendChild(cb);
+				} else {
+					cell.textContent = String(value);
+				}
 			};
 
 			// Add rows for each agency.
 			agencies.forEach(function (agency, i) {
 				var row = table.insertRow(i);
+				if (!agency.is_official) {
+					row.classList.add("unofficial");
+				}
 				propNames.forEach(insertCell, { row: row, agency: agency });
 			});
 
