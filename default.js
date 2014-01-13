@@ -2,6 +2,7 @@
 require(["gtfs-exchange.min"], function (Gtfs) {
 	"use strict";
 	var agencyListUrl = "proxy.ashx?http://www.gtfs-data-exchange.com/api/agencies";
+	var sampleDataUrl = "intercity-transit.json";
 
 	function isInWA(val) {
 		return val && val.country === "United States" && val.state === "Washington";
@@ -142,5 +143,19 @@ require(["gtfs-exchange.min"], function (Gtfs) {
 		xhr.send();
 	}
 
+	function sentRequestForSingleAgencyList() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", sampleDataUrl, true);
+		xhr.onload = function () {
+			var agencyData = Gtfs.parseAgencyResponse(xhr.responseText);
+			console.log(agencyData);
+		};
+		xhr.onerror = function (e) {
+			console.error(e);
+		};
+		xhr.send();
+	}
+
 	sendRequestForAgencyList();
+	sentRequestForSingleAgencyList();
 });
