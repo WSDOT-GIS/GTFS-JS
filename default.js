@@ -123,6 +123,8 @@ require(["gtfs-exchange.min"], function (Gtfs) {
 		}
 	}
 
+	/** Sends a request for a list of agencies from the GTFS Data Exchange API.
+	 */
 	function sendRequestForAgencyList() {
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", agencyListUrl, true);
@@ -143,6 +145,10 @@ require(["gtfs-exchange.min"], function (Gtfs) {
 		xhr.send();
 	}
 
+	/** Sends a request for GTFS data for a single agency.
+	 * If the request is successful, the JSON response is parsed
+	 * and logged to the console.
+	 */
 	function sentRequestForSingleAgencyList() {
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", sampleDataUrl, true);
