@@ -1,4 +1,4 @@
-﻿/*global require*/
+/*global require*/
 require(["gtfs-exchange.min"], function (Gtfs) {
 	"use strict";
 	var agencyListUrl = "proxy.ashx?http://www.gtfs-data-exchange.com/api/agencies";
