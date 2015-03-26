@@ -3,6 +3,8 @@ GTFS-JS
 
 JavaScript library for working with [GTFS] data.
 
+[![bitHound Score](https://www.bithound.io/github/WSDOT-GIS/GTFS-JS/badges/score.svg?)](https://www.bithound.io/github/WSDOT-GIS/GTFS-JS)
+
 ## Files ##
 
 ### gtfs-exchange.js ###
