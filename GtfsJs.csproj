@@ -74,8 +74,8 @@
     <Content Include="bower.json" />
     <Content Include="spec\gtfsxSpec.js" />
     <Content Include="demo\intercity-transit.json" />
-    <Content Include="api.md" />
     <Content Include=".travis.yml" />
+    <None Include="README.hbs" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

@@ -16,7 +16,7 @@
 }(this, function () {
 
     /**
-     * Module for working with GTFS Exchange data.
+     * Module converting between object types.
      * @exports conversionUtils
      */
 
