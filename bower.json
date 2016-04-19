@@ -1,0 +1,31 @@
+{
+  "name": "gtfs",
+  "description": "JavaScript library for working with GTFS data.",
+  "main": "gtfsx.js",
+  "authors": [
+    "WSDOT-GIS"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "GTFS",
+    "general",
+    "transportation",
+    "format",
+    "specification",
+    "transit"
+  ],
+  "homepage": "https://github.com/WSDOT-GIS/GTFS-JS",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "spec",
+    "demo"
+  ],
+  "devDependencies": {
+    "fetch": "^0.11.0"
+  }
+}

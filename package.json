@@ -1,0 +1,43 @@
+{
+  "name": "gtfs",
+  "version": "1.0.0",
+  "description": "JavaScript library for working with GTFS data.",
+  "main": "gtfsx.js",
+  "scripts": {
+    "test": "jasmine",
+    "prepublish": "jsdoc2md gtfsx.js conversionUtils.js Datafile.js Agency.js > api.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WSDOT-GIS/GTFS-JS.git"
+  },
+  "files": [
+    "Agency.js",
+    "conversionUtils.js",
+    "Datafile.js",
+    "gtfsx.js",
+    "README.md",
+    "UNLICENSE"
+  ],
+  "keywords": [
+    "GTFS",
+    "general",
+    "transportation",
+    "format",
+    "specification",
+    "transit"
+  ],
+  "author": "WSDOT-GIS",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/WSDOT-GIS/GTFS-JS/issues"
+  },
+  "homepage": "https://github.com/WSDOT-GIS/GTFS-JS#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "jsdoc-to-markdown": "^1.3.4"
+  },
+  "dependencies": {
+    "node-fetch": "^1.5.1"
+  }
+}

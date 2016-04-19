@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,19 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="default.css" />
-    <Content Include="default.htm" />
-    <Content Include="default.js" />
-    <Content Include="default.min.css">
-      <DependentUpon>default.css</DependentUpon>
-    </Content>
-    <Content Include="default.min.js">
-      <DependentUpon>default.js</DependentUpon>
-    </Content>
-    <Content Include="gtfs-exchange.js" />
-    <Content Include="gtfs-exchange.min.js">
-      <DependentUpon>gtfs-exchange.js</DependentUpon>
-    </Content>
+    <Content Include="Datafile.js" />
+    <Content Include="Agency.js" />
+    <Content Include="conversionUtils.js" />
+    <Content Include="demo\default.css" />
+    <Content Include="demo\default.htm" />
+    <Content Include="demo\default.js" />
+    <Content Include="gtfsx.js" />
     <Content Include="proxy.ashx" />
   </ItemGroup>
   <ItemGroup>
@@ -71,14 +66,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
-    <Content Include="gtfs-exchange.min.js.map">
-      <DependentUpon>gtfs-exchange.js</DependentUpon>
-    </Content>
-    <Content Include="default.min.js.map">
-      <DependentUpon>default.js</DependentUpon>
-    </Content>
     <Content Include="agencies.json" />
-    <Content Include="intercity-transit.json" />
+    <Content Include="UNLICENSE" />
+    <Content Include="README.md" />
+    <Content Include="package.json" />
+    <Content Include="spec\support\jasmine.json" />
+    <Content Include="bower.json" />
+    <Content Include="spec\gtfsxSpec.js" />
+    <Content Include="demo\intercity-transit.json" />
+    <Content Include="api.md" />
+    <Content Include=".travis.yml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -97,21 +94,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58091</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58091/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
