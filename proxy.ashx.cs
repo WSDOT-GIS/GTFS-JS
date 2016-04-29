@@ -13,7 +13,7 @@ namespace GtfsJs
 	/// </summary>
 	public class proxy : IHttpHandler
 	{
-		static readonly Regex allowedRe = new Regex(@"^www\.gtfs-data-exchange\.com$", RegexOptions.IgnoreCase);
+		static readonly Regex allowedRe = new Regex(@"^((www\.gtfs-data-exchange\.com)|(api\.transitfeeds\.com))$", RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
 
 		public void ProcessRequest(HttpContext context)
 		{
@@ -74,6 +74,10 @@ namespace GtfsJs
 				}
 
 
+                foreach (string key in resp.Headers.Keys)
+                {
+                    context.Response.AppendHeader(key, resp.Headers[key]);
+                }
 
 				using (var stream = resp.GetResponseStream())
 				{

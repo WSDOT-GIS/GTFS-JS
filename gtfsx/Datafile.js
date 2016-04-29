@@ -3,12 +3,12 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(["./conversionUtils"], factory);
+        define(["../conversionUtils"], factory);
     } else if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like enviroments that support module.exports,
         // like Node.
-        module.exports = factory(require("./conversionUtils.js"));
+        module.exports = factory(require("../conversionUtils.js"));
     } else {
         // Browser globals (root is window)
         root.gtfsx = factory(root.conversionUtils);
@@ -16,6 +16,7 @@
 }(this, function (conversionUtils) {
     /**
      * @module Datafile
+     * @deprecated
      */
 
     /** Represents an element of the datafile array returned from the API endpoint http://www.gtfs-data-exchange.com/api/agency?agency={dataexchange_id}.

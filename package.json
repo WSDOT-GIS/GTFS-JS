@@ -5,7 +5,7 @@
   "main": "gtfsx.js",
   "scripts": {
     "test": "jasmine",
-    "prepublish": "jsdoc2md --template README.hbs gtfsx.js conversionUtils.js Datafile.js Agency.js > README.md"
+    "prepublish": "jsdoc2md --template README.hbs *.js transitfeeds/*.js gtfsx/*.js > README.md"
   },
   "repository": {
     "type": "git",

@@ -3,12 +3,12 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(["./conversionUtils", "./Datafile"], factory);
+        define(["../conversionUtils", "./Datafile"], factory);
     } else if (typeof exports === 'object') {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like enviroments that support module.exports,
         // like Node.
-        module.exports = factory(require("./conversionUtils.js"), require("./Datafile.js"));
+        module.exports = factory(require("../conversionUtils.js"), require("./Datafile.js"));
     } else {
         // Browser globals (root is window)
         root.Agency = factory(root.conversionUtils, root.Datafile);
@@ -17,10 +17,11 @@
 
     /**
      * @module Agency
+     * @deprecated
      */
 
     /** An object representing an agency that publishes GTFS data to GTFS-Exchange.
-     * @constructor
+     * @class
      * @alias module:Agency
      * @param {Object} data - Data corresponding to class's properties.
      * @param {?Object.<string, object>} datafiles - An array of {@link DataFile} objects.

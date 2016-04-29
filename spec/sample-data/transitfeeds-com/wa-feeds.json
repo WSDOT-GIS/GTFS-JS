@@ -1,0 +1,355 @@
+{
+  "status": "OK",
+  "ts": 1461110464,
+  "results": {
+    "total": 25,
+    "limit": 100,
+    "page": 1,
+    "numPages": 1,
+    "feeds": [
+      {
+        "id": "rivercities-transit/607",
+        "t": "RCT GTFS",
+        "l": {
+          "id": 457,
+          "pid": 65,
+          "t": "Longview, WA, USA",
+          "n": "Longview",
+          "lat": 46.138168,
+          "lng": -122.938167
+        },
+        "u": { "d": "http://data.trilliumtransit.com/gtfs/rivercitiestransit-wa-us/rivercitiestransit-wa-us.zip" }
+      },
+      {
+        "id": "mason-transit/590",
+        "t": "Mason Transit GTFS",
+        "l": {
+          "id": 438,
+          "pid": 65,
+          "t": "Mason County, WA, USA",
+          "n": "Mason County",
+          "lat": 47.425115,
+          "lng": -123.195138
+        },
+        "u": { "d": "http://data.trilliumtransit.com/gtfs/mason-wa-us/mason-wa-us.zip" }
+      },
+      {
+        "id": "washington-state-ferries/586",
+        "t": "Washington State Ferries GTFS",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": { "d": "https://business.wsdot.wa.gov/Transit/csv_files/wsf/google_transit.zip" }
+      },
+      {
+        "id": "seattle-children-s-hospital/456",
+        "t": "Seattle Children's Hospital Shuttle GTFS",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": {
+          "i": "http://www.soundtransit.org/Developer-resources/Data-downloads",
+          "d": "http://developer.onebusaway.org/tmp/sound/gtfs/modified/98_gtfs.zip"
+        }
+      },
+      {
+        "id": "everett-transit/455",
+        "t": "Everett Transit GTFS",
+        "l": {
+          "id": 336,
+          "pid": 65,
+          "t": "Everett, WA, USA",
+          "n": "Everett",
+          "lat": 47.978985,
+          "lng": -122.202079
+        },
+        "u": {
+          "i": "http://www.soundtransit.org/Developer-resources/Data-downloads",
+          "d": "http://developer.onebusaway.org/tmp/sound/gtfs/modified/97_gtfs.zip"
+        }
+      },
+      {
+        "id": "community-transit/454",
+        "t": "Community Transit GTFS",
+        "l": {
+          "id": 336,
+          "pid": 65,
+          "t": "Everett, WA, USA",
+          "n": "Everett",
+          "lat": 47.978985,
+          "lng": -122.202079
+        },
+        "u": {
+          "i": "http://www.soundtransit.org/Developer-resources/Data-downloads",
+          "d": "http://developer.onebusaway.org/tmp/sound/gtfs/modified/29_gtfs.zip"
+        }
+      },
+      {
+        "id": "sound-transit/453",
+        "t": "Sound Transit Vehicle Positions",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "sound-transit/452",
+        "t": "Sound Transit Trip Updates",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "intercity-transit/451",
+        "t": "Intercity Transit Vehicle Positions",
+        "l": {
+          "id": 261,
+          "pid": 65,
+          "t": "Olympia, WA, USA",
+          "n": "Olympia",
+          "lat": 47.037874,
+          "lng": -122.900695
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "intercity-transit/450",
+        "t": "Intercity Transit Trip Updates",
+        "l": {
+          "id": 261,
+          "pid": 65,
+          "t": "Olympia, WA, USA",
+          "n": "Olympia",
+          "lat": 47.037874,
+          "lng": -122.900695
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "pierce-transit/449",
+        "t": "Pierce Transit Vehicle Positions",
+        "l": {
+          "id": 335,
+          "pid": 65,
+          "t": "Pierce County, WA, USA",
+          "n": "Pierce County",
+          "lat": 47.067588,
+          "lng": -122.129527
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "pierce-transit/448",
+        "t": "Pierce Transit GTFS",
+        "l": {
+          "id": 335,
+          "pid": 65,
+          "t": "Pierce County, WA, USA",
+          "n": "Pierce County",
+          "lat": 47.067588,
+          "lng": -122.129527
+        },
+        "u": {
+          "i": "http://www.soundtransit.org/Developer-resources/Data-downloads",
+          "d": "http://developer.onebusaway.org/tmp/sound/gtfs/modified/3_gtfs.zip"
+        }
+      },
+      {
+        "id": "pierce-transit/447",
+        "t": "Pierce Transit Trip Updates",
+        "l": {
+          "id": 335,
+          "pid": 65,
+          "t": "Pierce County, WA, USA",
+          "n": "Pierce County",
+          "lat": 47.067588,
+          "lng": -122.129527
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "king-county-metro/446",
+        "t": "KCM Vehicle Positions",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "king-county-metro/445",
+        "t": "KCM Trip Updates",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": { "i": "http://www.soundtransit.org/Developer-resources/Data-downloads" }
+      },
+      {
+        "id": "link-transit/392",
+        "t": "Link Transit GTFS",
+        "l": {
+          "id": 299,
+          "pid": 65,
+          "t": "Wenatchee, WA, USA",
+          "n": "Wenatchee",
+          "lat": 47.42346,
+          "lng": -120.310349
+        },
+        "u": { "d": "http://data.trilliumtransit.com/gtfs/linktransit-wa-us/linktransit-wa-us.zip" }
+      },
+      {
+        "id": "intercity-transit/356",
+        "t": "Intercity Transit GTFS",
+        "l": {
+          "id": 261,
+          "pid": 65,
+          "t": "Olympia, WA, USA",
+          "n": "Olympia",
+          "lat": 47.037874,
+          "lng": -122.900695
+        },
+        "u": { "d": "http://www.intercitytransit.com/googledata/google_transit.zip" }
+      },
+      {
+        "id": "kitsap-transit/296",
+        "t": "Kitsap Transit GTFS",
+        "l": {
+          "id": 214,
+          "pid": 65,
+          "t": "Bremerton, WA, USA",
+          "n": "Bremerton",
+          "lat": 47.56732,
+          "lng": -122.632936
+        },
+        "u": { "i": "http://www.kitsaptransit.org/DeveloperUserAgreement.html" }
+      },
+      {
+        "id": "c-tran/283",
+        "t": "C-TRAN Twitter",
+        "l": {
+          "id": 209,
+          "pid": 65,
+          "t": "Vancouver, WA, USA",
+          "n": "Vancouver",
+          "lat": 45.638728,
+          "lng": -122.661486
+        },
+        "u": [ ]
+      },
+      {
+        "id": "c-tran/282",
+        "t": "C-TRAN GTFS",
+        "l": {
+          "id": 209,
+          "pid": 65,
+          "t": "Vancouver, WA, USA",
+          "n": "Vancouver",
+          "lat": 45.638728,
+          "lng": -122.661486
+        },
+        "u": { "i": "http://www.c-tran.com/gtfs/gtfs_agreement_form.html" }
+      },
+      {
+        "id": "spokane-transit-authority/200",
+        "t": "Spokane Transit Twitter",
+        "l": {
+          "id": 157,
+          "pid": 65,
+          "t": "Spokane, WA, USA",
+          "n": "Spokane",
+          "lat": 47.65878,
+          "lng": -117.426047
+        },
+        "u": [ ]
+      },
+      {
+        "id": "spokane-transit-authority/199",
+        "t": "STA GTFS",
+        "l": {
+          "id": 157,
+          "pid": 65,
+          "t": "Spokane, WA, USA",
+          "n": "Spokane",
+          "lat": 47.65878,
+          "lng": -117.426047
+        },
+        "u": { "d": "http://www.gtfs-data-exchange.com/agency/spokane-transit-authority/latest.zip" }
+      },
+      {
+        "id": "yakima-transit/153",
+        "t": "Yakima Transit",
+        "l": {
+          "id": 142,
+          "pid": 65,
+          "t": "Yakima, WA, USA",
+          "n": "Yakima",
+          "lat": 46.602071,
+          "lng": -120.505899
+        },
+        "u": { "d": "http://mjcaction.com/MJC_GTFS_Public/yakima_google_transit.zip" }
+      },
+      {
+        "id": "sound-transit/44",
+        "t": "Sound Transit GTFS",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": {
+          "i": "http://www.soundtransit.org/Developer-resources/Data-downloads",
+          "d": "http://developer.onebusaway.org/tmp/sound/gtfs/modified/40_gtfs.zip"
+        }
+      },
+      {
+        "id": "king-county-metro/73",
+        "t": "King County Metro GTFS",
+        "l": {
+          "id": 66,
+          "pid": 65,
+          "t": "Seattle, WA, USA",
+          "n": "Seattle",
+          "lat": 47.606209,
+          "lng": -122.332071
+        },
+        "u": {
+          "i": "http://www.kingcounty.gov/transportation/kcdot/MetroTransit/Developers.aspx",
+          "d": "http://metro.kingcounty.gov/GTFS/google_transit.zip"
+        }
+      }
+    ]
+  }
+}

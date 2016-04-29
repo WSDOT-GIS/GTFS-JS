@@ -1,7 +1,7 @@
 /*eslint-env node, jasmine */
 
-var gtfsx = require("../gtfsx.js");
-var Agency = require("../Agency.js");
+var gtfsx = require("../gtfsx/gtfsx.js");
+var Agency = require("../gtfsx/Agency.js");
 
 describe("gtfsx tests", function () {
     it("should be able to retrieve agencies list", function (done) {
