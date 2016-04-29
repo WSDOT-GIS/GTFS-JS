@@ -215,3 +215,5 @@ Group an array of agencies by area.
 URL for the most current GTFS ZIP file
 
 **Kind**: inner property of <code>[Agency](#exp_module_Agency--Agency)</code>  
+
+[GTFS]:https://developers.google.com/transit/gtfs/
